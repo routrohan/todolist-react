@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoList from './TodoList';
 import TodoData from './TodoData'
-
+import AddTask from './AddTask'
 class App extends React.Component {
 
     constructor() {
@@ -41,7 +41,10 @@ class App extends React.Component {
         return(
             <div>
                 <h1 className="navbar">TODO-LIST</h1>
-                <p className = "todo-list">{todoitems}</p>
+                <div className = "todo-list">
+                    <AddTask />
+                   {todoitems}
+                </div>
             </div>
         )
     }
