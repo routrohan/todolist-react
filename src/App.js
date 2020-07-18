@@ -1,17 +1,21 @@
 import React from 'react';
 import TodoList from './TodoList';
-import TodoData from './TodoData'
-import AddTask from './AddTask'
+import AddTask from './AddTask';
+
+
 
 class App extends React.Component {
 
     constructor() {
         super ()
         this.state={
-            todos: TodoData,
-            items: []
+            
+            items: [],
+            id: 0
         }
         this.handleChange = this.handleChange.bind(this)
+        
+        
     }
 
     handleChange(id) {
@@ -30,6 +34,9 @@ class App extends React.Component {
         }
         )
     }
+
+    
+    
     componentDidMount() {
         fetch('/send')
             .then(response => {return response.json()})
@@ -43,35 +50,35 @@ class App extends React.Component {
             
             
     }
+
+    
+    
     
 
     render() {
         
         
 
-        // const todoitems = this.state.todos.map(
-        //     item => {
-        //         return(
-        //             <TodoList key = {item.id} id={item.id} text={item.text} completed={item.completed} item = {item} handleChange={this.handleChange}/>
-        //         )
-        //     }
-        // )
+        
         const newitem = this.state.items.map(
             newitem =>{
                 return (
-                    // <div className = "todo-list">{newitem.content}</div>
-                    <TodoList key={newitem.id} id = {newitem.id} content={newitem.content} done={newitem.done} newitem={newitem} handleChange={this.handleChange}/>
+
+                    <TodoList key={newitem.id} id = {newitem.id} content={newitem.content} done={newitem.done} newitem={newitem} handleChange={this.handleChange} />
+                    
+                    
                 )
             }
         )
-        // console.log(this.state.items)
+       
         
         return(
             <div>
                 <h1 className="navbar">TODO-LIST</h1>
                 <div className = "todo-list">
-                    <AddTask />
-                   {newitem}
+                <AddTask />
+                {newitem}  
+                
                 </div>
                 
             </div>
