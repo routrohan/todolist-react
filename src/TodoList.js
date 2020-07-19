@@ -14,7 +14,7 @@ class TodoList extends React.Component{
     deleteHandler(event) {
         event.preventDefault()
 
-        let dlink = '/delete/'+this.props.id
+        let dlink = 'https://todolist-react-backend.herokuapp.com/delete/'+this.props.id
         fetch(dlink)
         .then(
             response => response.json()

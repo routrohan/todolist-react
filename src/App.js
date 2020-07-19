@@ -5,7 +5,7 @@ import AddTask from './AddTask';
 
 
 class App extends React.Component {
-
+ 
     constructor() {
         super ()
         this.state={
@@ -38,7 +38,7 @@ class App extends React.Component {
     
     
     componentDidMount() {
-        fetch('/send')
+        fetch('https://todolist-react-backend.herokuapp.com/send')
             .then(response => {return response.json()})
             .then(data=>
                 {

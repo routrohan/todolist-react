@@ -22,7 +22,7 @@ class AddTask extends React.Component {
     submitHandler(event){
         event.preventDefault()
         console.log(this.state)
-        let link = '/task/'+this.state.content
+        let link = 'https://todolist-react-backend.herokuapp.com/task/'+this.state.content
         console.log(link)
         fetch(link)
             .then(response=>{
@@ -44,7 +44,7 @@ class AddTask extends React.Component {
                 <form onSubmit={this.submitHandler}>
                 
                     <input type="text" name = "content" value={content} onChange={this.changeHandler}></input>
-                    
+                    &emsp;
                     <button type="submit" onClick= {this.refreshPage}>Submit</button>
                 </form>
             </div>
