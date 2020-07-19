@@ -24,6 +24,12 @@ class App extends React.Component {
                 todo => {
                     if(todo.id === id){
                         todo.done = !todo.done    
+                        let linkId = 'https://todolist-react-backend.herokuapp.com/done/'+todo.id;
+                        fetch(linkId)
+                        .then(response => {
+         return response.json()
+        })
+                        .then(data=>console.log(data))
                     }
                     return todo;
                 }
