@@ -45,7 +45,7 @@ class AddTask extends React.Component {
                 
                     <input type="text" name = "content" value={content} onChange={this.changeHandler}></input>
                     &emsp;
-                    <button type="submit" onClick= {this.refreshPage}>Submit</button>
+                    <button type="submit" onClick= {this.refreshPage}>Add</button>
                 </form>
             </div>
         )
