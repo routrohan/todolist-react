@@ -1,6 +1,4 @@
 import React from 'react'
-import axios from 'axios'
-import {withRouter} from 'react-router-dom'
 
 
 
@@ -44,7 +42,9 @@ class AddTask extends React.Component {
         return(
             <div>
                 <form onSubmit={this.submitHandler}>
+                
                     <input type="text" name = "content" value={content} onChange={this.changeHandler}></input>
+                    
                     <button type="submit" onClick= {this.refreshPage}>Submit</button>
                 </form>
             </div>

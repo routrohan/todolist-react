@@ -36,7 +36,8 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 30px 20px 0;
+    padding: 30px 20px 10px;
+   
     width: 70%;
     border-bottom: 1px solid #cecece;
     font-family: Roboto, sans-serif;
